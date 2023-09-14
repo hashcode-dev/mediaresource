@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @Getter
 public class MediaServiceImpl implements MediaService {
-
     @Autowired
     private MediaRepository mediaRepository;
     @Override
