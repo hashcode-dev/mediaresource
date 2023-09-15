@@ -1,0 +1,11 @@
+steps:
+  - name: maven:3.3-jdk-17
+    entrypoint: mvn
+    args: ['clean ', 'install', '-Dmaven.test.skip=true']
+#artifacts:
+#    mavenArtifacts:
+#      - repository: 'https://asia-east1-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
+#        path: 'app-path'
+#        artifactId: 'mediaresource'
+#        groupId: 'org.supershine'
+#        version: '0.0.1-SNAPSHOT'
