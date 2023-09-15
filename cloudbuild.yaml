@@ -5,7 +5,7 @@ steps:
 artifacts:
     mavenArtifacts:
       - repository: 'https://asia-east1-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
-        path: '/workspace/target'
+        path: '/workspace/target/mediaresource-0.0.1-SNAPSHOT.jar.original'
         artifactId: 'mediaresource'
         groupId: 'org.supershine'
         version: '0.0.1-SNAPSHOT'
