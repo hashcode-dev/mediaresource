@@ -9,11 +9,9 @@ steps:
       - '-t'
       - 'gcr.io/$PROJECT_ID/sonar-scanner:4.6.0.2311'
       - '.'
-
     images:
       - 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
       - 'gcr.io/$PROJECT_ID/sonar-scanner:4.6.0.2311'
-
   - name: maven:3.8.3-openjdk-17
     entrypoint: mvn
     args: ['package', '-Dmaven.test.skip=true']
