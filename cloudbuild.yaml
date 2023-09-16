@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/$PROJECT_ID/sonar-scanner:4.6.0.2311'
+  - name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
     args:
           - '-Dsonar.host.url=https://sonarcloud.io'
           - '-Dsonar.login={2d39390f668759ec998fd235aee32d894c74f4e0}'
