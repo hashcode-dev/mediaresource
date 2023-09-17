@@ -1,7 +1,7 @@
 steps:
   - name: maven:3.8.3-openjdk-17
     entrypoint: mvn
-    args: ['sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0', 'package', '-Dmaven.test.skip=true']
+    args: ['sonar:sonar, ‘-Dsonar.host.url=https://sonarcloud.io' , '-Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0', 'package', '-Dmaven.test.skip=true']
 artifacts:
     mavenArtifacts:
       - repository: 'https://asia-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
