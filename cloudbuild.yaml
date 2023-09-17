@@ -3,10 +3,9 @@ steps:
     entrypoint: mvn
     args: ['sonar:sonar',
            '-Dsonar.host.url=https://sonarcloud.io',
-           '-Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0',
+           '-Dsonar.token=2d39390f668759ec998fd235aee32d894c74f4e0',
            '-Dsonar.projectKey=hashcode-dev',
            '-Dsonar.organization=hashcode-dev',
-           '-Dsonar.sources=.',
            'package',
            '-Dmaven.test.skip=true']
 artifacts:
