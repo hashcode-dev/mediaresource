@@ -1,11 +1,12 @@
 steps:
-  - name: sonar-scanner:latest
+  - name: 'gcr.io/$PROJECT_ID/sonar-scanner:latest'
     args:
       - '-Dsonar.host.url=https://sonarcloud.io'
       - '-Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0'
       - '-Dsonar.projectKey=hashcode-dev'
       - '-Dsonar.organization=hashcode-dev'
       - '-Dsonar.sources=.'
+    tags: ['cloud-builders-community']
   - name: maven:3.8.3-openjdk-17
     entrypoint: mvn
     args: ['package', '-Dmaven.test.skip=true']
