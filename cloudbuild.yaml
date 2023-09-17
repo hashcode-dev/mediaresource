@@ -1,9 +1,7 @@
 steps:
   - name: maven:3.8.3-openjdk-17
     entrypoint: mvn
-    args: ['org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar',
-           '-Dsonar.host.url=https://sonarcloud.io',
-           '-Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0',
+    args: ['org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2d39390f668759ec998fd235aee32d894c74f4e0',
            'package',
            '-Dmaven.test.skip=true']
 artifacts:
