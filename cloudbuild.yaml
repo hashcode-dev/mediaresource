@@ -8,11 +8,8 @@ steps:
            '-Dsonar.host.url=https://sonarcloud.io',
            '-Dsonar.token=2d39390f668759ec998fd235aee32d894c74f4e0',
            '-Dsonar.projectKey=hashcode-dev',
-           '-Dsonar.organization=hashcode-dev']
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
-    args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-timeout: '1600s'
+           '-Dsonar.organization=hashcode-dev',
+           'appengine:deploy']
 artifacts:
     mavenArtifacts:
       - repository: 'https://asia-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
