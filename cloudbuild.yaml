@@ -3,13 +3,13 @@ steps:
     entrypoint: mvn
     args: ['clean',
            'package',
+           'appengine:deploy',
            '-Dmaven.test.skip=true',
            'sonar:sonar',
            '-Dsonar.host.url=https://sonarcloud.io',
            '-Dsonar.token=2d39390f668759ec998fd235aee32d894c74f4e0',
            '-Dsonar.projectKey=hashcode-dev',
-           '-Dsonar.organization=hashcode-dev',
-           'appengine:deploy']
+           '-Dsonar.organization=hashcode-dev',]
 artifacts:
     mavenArtifacts:
       - repository: 'https://asia-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
