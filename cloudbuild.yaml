@@ -3,7 +3,6 @@ steps:
     entrypoint: mvn
     args: ['clean',
            'package',
-           'appengine:deploy',
            '-Dmaven.test.skip=true',
            'sonar:sonar',
            '-Dsonar.host.url=https://sonarcloud.io',
