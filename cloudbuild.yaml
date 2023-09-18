@@ -11,7 +11,7 @@ steps:
            '-Dsonar.organization=hashcode-dev',
            'appengine:deploy']
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: NONE
 artifacts:
     mavenArtifacts:
       - repository: 'https://asia-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
