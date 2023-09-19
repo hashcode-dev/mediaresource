@@ -6,9 +6,9 @@ steps:
            '-Dmaven.test.skip=true',
            'sonar:sonar',
            '-Dsonar.host.url=https://sonarcloud.io',
-           '-Dsonar.token=2d39390f668759ec998fd235aee32d894c74f4e0',
-           '-Dsonar.projectKey=hashcode-dev',
-           '-Dsonar.organization=hashcode-dev']
+           '-Dsonar.token=${_SONAR_QUBE_TOKEN}',
+           '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
+           '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
 timeout: '1600s'
