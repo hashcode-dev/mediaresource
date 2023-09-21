@@ -11,13 +11,6 @@ steps:
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
-    secretEnv: ['MONGODB_URL', 'MONGODB_COLLECTION']
-availableSecrets:
-  secretManager:
-    - versionName: projects/$PROJECT_NUMBER/secrets/mongo_db_url/versions/1
-      env: 'MONGODB_URL'
-    - versionName: projects/$PROJECT_NUMBER/secrets/mongo_db_collection/versions/1
-      env: 'MONGODB_COLLECTION'
 timeout: '1600s'
 options:
   logging: CLOUD_LOGGING_ONLY
