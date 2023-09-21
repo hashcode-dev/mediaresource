@@ -9,13 +9,14 @@ steps:
            '-Dsonar.token=${_SONAR_QUBE_TOKEN}',
            '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: "ubuntu"
+    args: ["bash", "./cloud_env.sh"]
     env:
-      - 'MONGO_DB_URL_DEV=${_MONGO_DB_URL}'
-      - 'COLLECTION_NAME_DEV=${_MONGO_DB_COLLECTION_NAME}'
-    args: ["app",
-           "deploy",
-           "app.yaml"]
+      - "PROJECT_ID=${PROJECT_ID}" # Substitution from GCP build trigger
+      - "MONGO_DB_URL=${_MONGO_DB_URL}" # Substitution from GCP build trigger
+      - "COLLECTION_NAME=${_MONGO_DB_COLLECTION_NAME}" # Substitution from GCP build trigger
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy"]
 timeout: '1600s'
 options:
   logging: CLOUD_LOGGING_ONLY
