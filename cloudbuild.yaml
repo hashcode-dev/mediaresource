@@ -10,10 +10,12 @@ steps:
            '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
   - name: "gcr.io/cloud-builders/gcloud"
+    env:
+      - 'MONGO_DB_URL_DEV=${_MONGO_DB_URL}'
+      - 'COLLECTION_NAME_DEV=${_MONGO_DB_COLLECTION_NAME}'
     args: ["app",
            "deploy",
-           "app.yaml",
-            "--set-env-vars=MONGO_DB_URL_DEV=${_MONGO_DB_URL}, COLLECTION_NAME_DEV=${_MONGO_DB_COLLECTION_NAME}"]
+           "app.yaml"]
 timeout: '1600s'
 options:
   logging: CLOUD_LOGGING_ONLY
