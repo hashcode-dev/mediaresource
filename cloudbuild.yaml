@@ -1,6 +1,6 @@
 substitutions:
-  MONGO_DB_URL: '${_MONGO_DB_URL}'
-  MONGO_DB_COLLECTION_NAME: '${_MONGO_DB_COLLECTION_NAME}'
+  _MONGO_DB_URL_KEY: '${_MONGO_DB_URL}'
+  _MONGO_DB_COLLECTION_NAME_KEY: '${_MONGO_DB_COLLECTION_NAME}'
 steps:
   - name: maven:3.8.3-openjdk-17
     entrypoint: mvn

@@ -1,8 +1,8 @@
 runtime: java
 env: flex
 env_variables:
-  MONGO_DB_URL_DEV: "%MONGO_DB_URL%"
-  COLLECTION_NAME_DEV: "%MONGO_DB_COLLECTION_NAME%"
+  MONGO_DB_URL_DEV: "%_MONGO_DB_URL_KEY%"
+  COLLECTION_NAME_DEV: "%_MONGO_DB_COLLECTION_NAME_KEY%"
 runtime_config:
   operating_system: ubuntu22
   runtime_version: 17
