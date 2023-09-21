@@ -9,7 +9,7 @@ steps:
            '-Dsonar.token=${_SONAR_QUBE_TOKEN}',
            '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
-  - name: "gcr.io/buildpacks/builder:latest"
+  - name: "gcr.io/buildpacks/builder:v1"
     args: ["pack", "build"]
     env:
       - 'MONGODB_URL=${_MONGO_DB_URL}'
