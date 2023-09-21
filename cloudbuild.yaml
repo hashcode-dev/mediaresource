@@ -12,6 +12,7 @@ steps:
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app",
            "deploy",
+           "app.yaml",
             "--set-env-vars=MONGO_DB_URL_DEV=${_MONGO_DB_URL}, COLLECTION_NAME_DEV=${_MONGO_DB_COLLECTION_NAME}"]
 timeout: '1600s'
 options:
