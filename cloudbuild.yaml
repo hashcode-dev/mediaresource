@@ -13,7 +13,7 @@ steps:
     args: ["bash", "./cloud_env.sh"]
     env:
       - "PROJECT_ID=${PROJECT_ID}" # Substitution from GCP build trigger
-      - "MONGO_DB_URL=${_MONGO_DB_URL}" # Substitution from GCP build trigger
+      - "MONGODB_DB_URL=${_MONGO_DB_URL}" # Substitution from GCP build trigger
       - "COLLECTION_NAME=${_MONGO_DB_COLLECTION_NAME}" # Substitution from GCP build trigger
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
