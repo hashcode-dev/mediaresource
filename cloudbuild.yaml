@@ -10,7 +10,7 @@ steps:
            '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
   - name: "gcr.io/cloud-builders/gcloud"
-    env:
+    substitutions:
       - 'MONGO_DB_URL=&{_MONGO_DB_URL}'
       - 'MONGO_DB_COLLECTION_NAME=&{_MONGO_DB_COLLECTION_NAME}'
     args: ["app", "deploy"]
