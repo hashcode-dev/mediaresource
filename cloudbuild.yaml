@@ -1,11 +1,14 @@
 steps:
   - name: maven:3.8.3-openjdk-17
+    env:
+    - 'MONGO_DB_URL=&{_MONGO_DB_URL}'
+    - 'MONGO_DB_COLLECTION_NAME=&{_MONGO_DB_COLLECTION_NAME}'
     entrypoint: mvn
     args: ['clean',
            'package',
            '-Dmaven.test.skip=true',
            'sonar:sonar',
-           '-Dsonar.host.url=https://sonarcloud.io',
+           '-Dsonar.host.url=${_SONAR_QUBE_HOST}',
            '-Dsonar.token=${_SONAR_QUBE_TOKEN}',
            '-Dsonar.projectKey=${_SONAR_QUBE_ORG_KEY}',
            '-Dsonar.organization=${_SONAR_QUBE_ORG_ID}']
@@ -16,8 +19,8 @@ options:
   logging: CLOUD_LOGGING_ONLY
 artifacts:
     mavenArtifacts:
-      - repository: 'https://asia-maven.pkg.dev/super-shine-microservice/supsershinemvnrepo'
-        path: '/workspace/target/mediaresource-0.0.1-SNAPSHOT.jar'
-        artifactId: 'mediaresource'
-        groupId: 'org.supershine'
-        version: '0.0.1-SNAPSHOT'
+      - repository: '${_ARTIFACTORY_REPO_URL}'
+        path: '${_ARTIFACTORY_REPO_PATH}'
+        artifactId: '${_ARTIFACTORY_ID}'
+        groupId: '${_ARTIFACTORY_GROUP_ID}'
+        version: '${_ARTIFACTORY_VERSION}'
