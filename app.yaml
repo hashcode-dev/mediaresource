@@ -1,7 +1,7 @@
 runtime: java
 env: flex
 env_variables:
-  MONGO_DB_URL_DEV: "%MONGO_DB_URL_VALUE%" # will be set in cloud_env.sh
+  MONGODB_DB_URL_DEV: "%MONGO_DB_URL_VALUE%" # will be set in cloud_env.sh
   COLLECTION_NAME_DEV: "%COLLECTION_NAME_VALUE%" # will be set in cloud_env.sh
 runtime_config:
   operating_system: ubuntu22
