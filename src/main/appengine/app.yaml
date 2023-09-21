@@ -1,7 +1,5 @@
 runtime: java
 env: flex
-vm_health_check:
-  enable_health_check: False
 runtime_config:
   operating_system: ubuntu22
   runtime_version: 17
