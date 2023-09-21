@@ -14,9 +14,9 @@ steps:
     secretEnv: ['MONGODB_URL', 'MONGODB_COLLECTION']
 availableSecrets:
   secretManager:
-    - versionName: projects/684375946845/secrets/mongo_db_url
+    - versionName: projects/$PROJECT_NUMBER/secrets/mongo_db_url/versions/1
       env: 'MONGODB_URL'
-    - versionName: projects/684375946845/secrets/mongo_db_collection
+    - versionName: projects/$PROJECT_NUMBER/secrets/mongo_db_collection/versions/1
       env: 'MONGODB_COLLECTION'
 timeout: '1600s'
 options:
